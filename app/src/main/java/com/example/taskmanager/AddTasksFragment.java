@@ -16,6 +16,7 @@ import androidx.fragment.app.DialogFragment;
 public class AddTasksFragment extends DialogFragment {
     private EditText taskTitle;
     private EditText effort;
+    private EditText taskMembers;
     private OnFragmentInteractionListener listener;
 
     public interface OnFragmentInteractionListener{
@@ -37,7 +38,7 @@ public class AddTasksFragment extends DialogFragment {
     public Dialog onCreateDialog(@Nullable Bundle savedInstanceState) {
         View view = LayoutInflater.from(getActivity()).inflate(R.layout.add_task_fragment_layout, null);
         taskTitle = view.findViewById(R.id.task_title_editText);
-
+        taskMembers = view.findViewById(R.id.members_editText);
         effort = view.findViewById(R.id.effort_editText);
 
         AlertDialog.Builder builder = new AlertDialog.Builder(getContext());
@@ -51,6 +52,7 @@ public class AddTasksFragment extends DialogFragment {
                     public void onClick(DialogInterface dialogInterface, int i) {
                         String task_title = taskTitle.getText().toString();
                         Integer task_effort = Integer.valueOf(effort.getText().toString());
+                        String task_members = taskMembers.getText().toString();
                         listener.onOKPressed(new Task(task_title, task_effort));
                     }
                 }).create();

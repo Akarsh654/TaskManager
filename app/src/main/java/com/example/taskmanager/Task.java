@@ -26,7 +26,7 @@ public class Task implements Serializable {
      * @return
      */
     public String getTaskTitle() {
-        return title;
+        return this.title;
     }
 
     /**
@@ -34,7 +34,7 @@ public class Task implements Serializable {
      * @param taskTitle
      */
     public void setTaskTitle(String taskTitle) {
-        title = taskTitle;
+        this.title = taskTitle;
     }
 
     /**
@@ -42,7 +42,7 @@ public class Task implements Serializable {
      * @return
      */
     public Integer getEffort() {
-        return effort;
+        return this.effort;
     }
 
     /**
@@ -50,7 +50,7 @@ public class Task implements Serializable {
      * @param days
      */
     public void setEffort(Integer days) {
-        effort = days;
+        this.effort = days;
     }
 
     /**

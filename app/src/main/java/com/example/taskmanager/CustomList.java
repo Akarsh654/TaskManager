@@ -34,7 +34,7 @@ public class CustomList extends ArrayAdapter {
         Task task = tasks.get(position);
         TextView taskTitle = view.findViewById(R.id.task_text);
         TextView effort = view.findViewById(R.id.effort_text);
-        TextView members_ = view.findViewById(R.id.member_list_text);
+        //TextView members_ = view.findViewById(R.id.member_list_text);
         taskTitle.setText(task.getTaskTitle());
         effort.setText(String.valueOf(task.getEffort()));
         return view;
