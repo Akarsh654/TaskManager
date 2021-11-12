@@ -13,6 +13,7 @@ import androidx.annotation.Nullable;
 
 import java.util.ArrayList;
 
+// References: https://stackoverflow.com/questions/48779095/how-to-input-multiple-data-in-one-edittext-separated-only-by-a-comma
 public class CustomList extends ArrayAdapter {
 
     private ArrayList<Task> tasks;
@@ -34,9 +35,10 @@ public class CustomList extends ArrayAdapter {
         Task task = tasks.get(position);
         TextView taskTitle = view.findViewById(R.id.task_text);
         TextView effort = view.findViewById(R.id.effort_text);
-        //TextView members_ = view.findViewById(R.id.member_list_text);
+        TextView members_ = view.findViewById(R.id.member_list_text);
         taskTitle.setText(task.getTaskTitle());
         effort.setText(String.valueOf(task.getEffort()));
+        members_.setText(android.text.TextUtils.join(",", task.getTeamMembers()));
         return view;
     }
 }

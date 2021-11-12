@@ -13,6 +13,8 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.DialogFragment;
 
+import java.util.ArrayList;
+
 public class AddTasksFragment extends DialogFragment {
     private EditText taskTitle;
     private EditText effort;
@@ -52,8 +54,8 @@ public class AddTasksFragment extends DialogFragment {
                     public void onClick(DialogInterface dialogInterface, int i) {
                         String task_title = taskTitle.getText().toString();
                         Integer task_effort = Integer.valueOf(effort.getText().toString());
-                        String task_members = taskMembers.getText().toString();
-                        listener.onOKPressed(new Task(task_title, task_effort));
+                        String[] task_members = taskMembers.getText().toString().split(",");
+                        listener.onOKPressed(new Task(task_title, task_effort, task_members));
                     }
                 }).create();
     }

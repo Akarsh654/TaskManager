@@ -8,13 +8,13 @@ import java.util.ArrayList;
 public class Task implements Serializable {
     private String title;
     private Integer effort;
-    private ArrayList<String> teamMembers;
+    private String[] teamMembers;
 
     public Task(String title, Integer effort) {
         this.title = title;
         this.effort = effort;
     }
-    public Task(String title, Integer effort, ArrayList<String> members) {
+    public Task(String title, Integer effort, String[] members) {
         this.title = title;
         this.effort = effort;
         this.teamMembers = members;
@@ -57,7 +57,7 @@ public class Task implements Serializable {
      *
      * @return
      */
-    public ArrayList<String> getTeamMembers() {
+    public String [] getTeamMembers() {
         return this.teamMembers;
     }
 
@@ -66,7 +66,7 @@ public class Task implements Serializable {
      * @param teamMembers
      * @return
      */
-    public void setTeamMembers(ArrayList<String> teamMembers) {
+    public void setTeamMembers(String [] teamMembers) {
         this.teamMembers = teamMembers;
     }
 }
